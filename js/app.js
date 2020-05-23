@@ -6,7 +6,10 @@ $(document).ready( () => {
     }
 
     console.log(getRandomInt(9));
-    $(`#image-${getRandomInt(9)}`).fadeIn(1500);
+    const pickAMole = () => {
+        $(`#image-${getRandomInt(9)}`).fadeIn(1500).fadeOut();
+    }
+    setInterval(pickAMole, 1500);
 
 
 });
