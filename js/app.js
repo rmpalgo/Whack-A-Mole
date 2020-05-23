@@ -2,6 +2,7 @@ $(document).ready( () => {
     console.log("DOM is ready!");
     let score = 0;
     let time = 1500;
+    let interval;
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max) + 1);
     }
@@ -9,10 +10,11 @@ $(document).ready( () => {
     console.log(getRandomInt(9));
 
     const checkIfWin = (score) => {
-        if(score === 19) {
+        if(score === 15) {
             let winner = "WINNER! WINNER! CHICKEN DINNER!";
             $('#score').html(winner);
             clearInterval(interval);
+            $('#newGame').show();
         }
     }
 
@@ -21,10 +23,13 @@ $(document).ready( () => {
         $(`#image-${randomNumber}`).fadeIn(time).fadeOut();
     }
 
-   let interval = setInterval(pickAMole, 1500);
+    let init = () => {
+        interval = setInterval(pickAMole, 1500);
+    }
 
     let stopGameTimeOut = () => {
         clearInterval(interval);
+        $('#newGame').show();
     }
 
     setTimeout(stopGameTimeOut, 30000);
@@ -35,6 +40,11 @@ $(document).ready( () => {
         $('.images').css("display", "none");
         $('#score').html(score);
         checkIfWin(score);
+    });
+
+    $('#newGame').click( () => {
+        $('#newGame').hide();
+        init();
     });
 
 
