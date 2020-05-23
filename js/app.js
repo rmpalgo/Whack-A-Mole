@@ -7,18 +7,18 @@ $(document).ready( () => {
 
     console.log(getRandomInt(9));
 
+
     const pickAMole = () => {
         let randomNumber = getRandomInt(9);
-        $(`#image-${randomNumber}`).fadeIn(500).fadeOut(200);
+        $(`#image-${randomNumber}`).fadeIn(1000).fadeOut();
     }
 
-    setInterval(pickAMole, 500);
+    setInterval(pickAMole, 1000);
 
     $('.images').click( () => {
-       score++;
-       $('.images').fadeOut();
-       $('#score').html(score);
+        score++;
+        $('.images').css("display", "none");
+        $('#score').html(score);
     });
-
 
 });
