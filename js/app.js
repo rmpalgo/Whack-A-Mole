@@ -10,11 +10,15 @@ $(document).ready( () => {
     console.log(getRandomInt(9));
 
     const checkIfWin = (score) => {
-        if(score === 15) {
+        if(score === 18) {
             let winner = "WINNER! WINNER! CHICKEN DINNER!";
             $('#score').html(winner);
             clearInterval(interval);
+            $("#top-score").html(score);
             $('#newGame').css("visibility", "visible");
+            score = 0;
+            time = 1500;
+            $("#score").html(score);
         }
     }
 
@@ -30,9 +34,8 @@ $(document).ready( () => {
     let stopGameTimeOut = () => {
         clearInterval(interval);
         $('#newGame').css("visibility", "visible");
+        $("#top-score").html(score);
     }
-
-    setTimeout(stopGameTimeOut, 30000);
 
     $('.images').click( () => {
         score++;
@@ -43,7 +46,11 @@ $(document).ready( () => {
     });
 
     $('#newGame').click( () => {
+        setTimeout(stopGameTimeOut, 30000);
         $('#newGame').css("visibility", "hidden");
+        score = 0;
+        time = 1500;
+        $("#score").html(score);
         init();
     });
 
