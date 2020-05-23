@@ -40,4 +40,8 @@ img {
 
 #newGame {
     cursor: pointer;
+    border: 2px solid blue;
+    width: 75px;
+    margin: 0 auto 25px auto;
+    background-color: #999;
 }

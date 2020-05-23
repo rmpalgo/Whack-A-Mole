@@ -14,7 +14,7 @@ $(document).ready( () => {
             let winner = "WINNER! WINNER! CHICKEN DINNER!";
             $('#score').html(winner);
             clearInterval(interval);
-            $('#newGame').show();
+            $('#newGame').css("visibility", "visible");
         }
     }
 
@@ -29,7 +29,7 @@ $(document).ready( () => {
 
     let stopGameTimeOut = () => {
         clearInterval(interval);
-        $('#newGame').show();
+        $('#newGame').css("visibility", "visible");
     }
 
     setTimeout(stopGameTimeOut, 30000);
@@ -43,7 +43,7 @@ $(document).ready( () => {
     });
 
     $('#newGame').click( () => {
-        $('#newGame').hide();
+        $('#newGame').css("visibility", "hidden");
         init();
     });
 
