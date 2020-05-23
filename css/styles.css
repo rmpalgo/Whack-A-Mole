@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+div#main{
+    margin: 0 auto;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.box {
+    height: 200px;
+    width: 200px;
+    border: 1px solid #999;
+}
+
+header {
+    text-align: center;
+}
