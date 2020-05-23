@@ -1,2 +1,2 @@
 # Whack-A-Mole
-![](name-of-giphy.gif)
+![](whack-mole-part1.gif)
