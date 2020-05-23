@@ -1,7 +1,7 @@
 $(document).ready( () => {
     console.log("DOM is ready!");
     let score = 0;
-    let time = 2000;
+    let time = 1500;
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max) + 1);
     }
@@ -10,7 +10,7 @@ $(document).ready( () => {
 
     const checkIfWin = (score) => {
         if(score === 19) {
-            let winner = "WINNER!";
+            let winner = "WINNER! WINNER! CHICKEN DINNER!";
             $('#score').html(winner);
             clearInterval(interval);
         }
@@ -22,6 +22,12 @@ $(document).ready( () => {
     }
 
    let interval = setInterval(pickAMole, 1500);
+
+    let stopGameTimeOut = () => {
+        clearInterval(interval);
+    }
+
+    setTimeout(stopGameTimeOut, 30000);
 
     $('.images').click( () => {
         score++;
