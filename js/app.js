@@ -46,7 +46,7 @@ $(document).ready( () => {
     });
 
     $('#newGame').click( () => {
-        setTimeout(stopGameTimeOut, 15000);
+        setTimeout(stopGameTimeOut, 30000);
         $('#newGame').css("visibility", "hidden");
         score = 0;
         time = 1500;
